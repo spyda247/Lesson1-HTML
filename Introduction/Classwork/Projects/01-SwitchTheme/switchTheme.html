@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Theme</title>
+    <style>
+        .wrapper {
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+        .wrapper h1 {
+            font-size: 3.8em;
+        }
+        .wrapper p, .switch {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .wrapper span {
+            font-weight: bold;
+        }
+        .dark-theme {
+            background-color: #222;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <a href="/">Home</a>
+    <h1>I Love Coding :)</h1>
+    <p>Click the button to switch theme</p>
+    <div class="switch">
+        Theme: <span>Light</span>
+        <button>Switch Theme</button>
+    </div>
+</div>
+<script defer>
+    const wrapper = document.querySelector('.wrapper')
+    const theme = document.querySelector('.wrapper span')
+    const btn = document.querySelector('button')
+
+    btn.addEventListener('click', function(event) {
+            event.preventDefault()
+            wrapper.classList.toggle('dark-theme')
+            
+            let value = theme.textContent
+            if(value === 'Light') {
+                theme.textContent ='Dark'
+            } else {
+                theme.textContent ='Light'
+            } 
+        }
+    )
+</script>
+</body>
+</html>
