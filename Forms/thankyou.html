@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <section>
+      <h1>Thank You!</h1>
+      <p id="msg"></p>
+    </section>
+    <script>
+      const path = document.location.search;
+      const data = path.split("&").map((item) => item.split("=")[1]);
+      const p = document.querySelector("p#msg");
+
+      let [fullname, email, phone] = data;
+
+      fullname = fullname.replace(/\+/g, " ");
+      email = email.replace(/\%40/g, ".");
+
+      p.innerHTML = `Dear <b>${fullname}</b>, Your information was submited successfully.`;
+    </script>
+  </body>
+</html>
