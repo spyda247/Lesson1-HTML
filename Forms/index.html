@@ -8,5 +8,55 @@
 </head>
 <body>
   <a href="/">Home</a>
+  <div class="wrapper">
+    <h1>Webinar Registration</h1>
+    <form action="./thankyou.html">
+      <h2>Enter your details</h2>
+      <label for="fullname">
+        Name
+        <br>
+        <input 
+          type="text"
+          name="fullname"
+          id="fullname"
+          placeholder="John Doe"
+          required
+          >
+      </label>
+      <br><br>
+      <label for="email">
+        Email
+        <br>
+        <input 
+          type="email"
+          name="email"
+          id="email"
+          placeholder="anna@example.com"
+          required
+        >
+      </label>
+      <br><br>
+      <label for="phone">
+        Phone
+        <br>
+        <input 
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="+234 809 639 6832"
+          required
+        >
+      </label>
+      <br><br>
+      <label for="submit">
+        <input 
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Send"
+        >
+      </label>
+    </form>
+  </div>
 </body>
 </html>
