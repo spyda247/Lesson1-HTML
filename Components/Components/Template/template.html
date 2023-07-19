@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <div class="wrapper">
+        <h2>HTML Template</h2>
+        <h3>Template</h3>
+        <p>I am not a template, you can't see it until JavaScript displays it!)</p>
+        <template id="some-template">
+            <h4>Hello, I am THE template LOL! :-)</h4>
+        </template>
+    </div>
+    <script>
+            const myTemplate = document.querySelector('#some-template');
+            function displayTemplate() {
+                setTimeout(() => {
+                    document.querySelector("body").appendChild(myTemplate.content)
+                }, 2000);
+            }
+            displayTemplate();
+        </script>
+</body>
+</html>
