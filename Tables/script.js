@@ -9,7 +9,7 @@ function processInvoice() {
   const unitPrices = Array.from(document.querySelectorAll(".unit-price"));
   
   for (
-    qty = 0, unitPrice = 0, price = 0;
+    let qty = 0, unitPrice = 0, price = 0;
     qty < quantities.length;
     qty++, unitPrice++, price++
   ) {
@@ -23,7 +23,7 @@ function processInvoice() {
 }
 
 
-//Utility Helper
+//Utility Helper Functions
 function calculateTotal(list) {
   let total = 0;
   for (let i = 0; i < list.length; i++) {
