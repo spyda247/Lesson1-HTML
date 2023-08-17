@@ -1,12 +1,22 @@
-html {
-  font-family: sans-serif;
+html,table {
+  font-family: Roboto, "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+.wrapper {
+  width: 100%;
+  min-width: 360px;
+}
+
+
 table {
+  width: inherit;
   border-collapse: collapse;
   border: 2px solid rgb(200,200,200);
   letter-spacing: 1px;
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
 td, th {

@@ -1,20 +1,4 @@
 // Main
-<<<<<<< HEAD
-const totalElement = document.querySelector('#tbl-total');
-const prices = Array.from(document.querySelectorAll('.price'));
-
-totalElement.textContent = calculateTotal(prices);
-
-// Utitlity
-function calculateTotal(list) {
-    let total = 0;
-    for (let i = 0; i < list.length; i++) {
-        total = total + parseFloat((list[i].textContent), 10);
-    }
-    return total;
-}
-    
-=======
 processInvoice();
 
 // Business Logic
@@ -52,4 +36,3 @@ function caluculateItemPrice(qty, unitPrice) {
   const price = parseFloat(qty) * parseFloat(unitPrice);
   return price.toFixed(2);
 }
->>>>>>> a80777675e788b710c95c25e7efbbb5fb58d740f
