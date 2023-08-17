@@ -1,6 +1,5 @@
 // Main
 const totalElement = document.querySelector('#tbl-total');
-
 const prices = Array.from(document.querySelectorAll('.price'));
 
 totalElement.textContent = calculateTotal(prices);
@@ -11,5 +10,6 @@ function calculateTotal(list) {
     for (let i = 0; i < list.length; i++) {
         total = total + parseFloat((list[i].textContent), 10);
     }
-}
     return total;
+}
+    
