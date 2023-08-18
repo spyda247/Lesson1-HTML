@@ -1,20 +1,21 @@
-console.log('processing...');
-processForm();
+const submitAddBtn = document.querySelector('#add');
+const submitSaveBtn = document.querySelector('#save');
+const  item = Array.from(
+  document.querySelectorAll("input:not(input[type=submit])"));
+const invoiceItems = [];
 
-function processForm() {
-  const result = [];
-  const submitBtn = document.querySelector('#submit');
-  const data = Array.from(
-    document.querySelectorAll('input')
-  );
-  console.log(data)
-  submitBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-  })
-  
-  console.log(result)
-  return result;
+submitAddBtn.addEventListener('click', () => addInvoiceItem(item))
+
+submitSaveBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log(invoiceItems);
+})
+
+function addInvoiceItem(invoiceItem) {
+  const item = {}
+  invoiceItem.forEach((prop) => {
+    item[prop.name] = prop.value;
+    prop.value ='';
+  });
+  invoiceItems.push(item);
 }
-
-
-
