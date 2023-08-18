@@ -1,22 +1,31 @@
-html,table {
-  font-family: Roboto, "Open Sans", sans-serif;
+html {
+  font-family: 'Monteserat', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
-  width: 100%;
-  min-width: 360px;
+  width: 95vw;
+  height: 100vh;
+  display: flex;
+  margin-top: -25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.wrapper h1 {
+  font-size: 0.95em;
+}
 
 table {
   width: inherit;
   border-collapse: collapse;
   border: 2px solid rgb(200,200,200);
   letter-spacing: 1px;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  
 }
 
 td, th {
