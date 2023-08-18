@@ -6,13 +6,10 @@ html {
 }
 
 .wrapper {
-  width: 95vw;
-  height: 100vh;
   display: flex;
-  margin-top: -25px;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:flex-start;
+  align-items:flex-start;
 }
 
 .wrapper h1 {
@@ -30,7 +27,7 @@ table {
 
 td, th {
   border: 1px solid rgb(190,190,190);
-  padding: 10px 20px;
+  padding: 10px;
 }
 
 th {
