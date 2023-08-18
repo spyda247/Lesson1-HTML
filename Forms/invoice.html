@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h2>Invoice</h2>
+    <form action="">
+      <h3>Add Invoice Item</h3>
+      <label for="name">
+        Name<br>
+        <input type="text" id="name" name="name" placeholder="Item name" required />
+      </label>
+      <br><br>
+      <label for="desc">
+        Description<br>
+        <input type="text" id="desc" name="desc" placeholder="Item description" required />
+      </label>
+      <br><br>
+      <label for="qty">
+        Quantity<br>
+        <input type="number" id="qty" name="qty" placeholder="Item quantity" required />
+      </label>
+      <br><br>
+      <label for="unit-price">
+        Unit Price<br>
+        <input type="float" id="unit-price" name="unit-price" placeholder="Unit Price" required />
+      </label>
+        <br><br>
+      <label for="submit">
+        <input 
+          id="submit"
+          value="Add"
+          type="submit"
+        />
+      </label>
+    </form>
+  </div>
+  <script src="processForm.js"></script>
+</body>
+
+</html>
