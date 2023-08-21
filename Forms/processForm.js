@@ -1,6 +1,6 @@
 const submitAddBtn = document.querySelector('#add');
 const submitSaveBtn = document.querySelector('#save');
-const  item = Array.from(
+const item = Array.from(
   document.querySelectorAll("input:not(input[type=submit])"));
 const invoiceItems = [];
 

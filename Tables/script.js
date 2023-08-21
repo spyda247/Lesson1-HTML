@@ -29,7 +29,7 @@ function calculateTotal(list) {
   for (let i = 0; i < list.length; i++) {
     total = total + parseFloat(list[i].textContent, 10);
   }
-  return total;
+  return total.toFixed(2);
 }
 
 function caluculateItemPrice(qty, unitPrice) {

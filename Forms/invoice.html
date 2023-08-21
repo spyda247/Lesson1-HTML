@@ -4,12 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="invoice.css">
   <title>Invoice</title>
 </head>
 
 <body>
 
   <div class="wrapper">
+    <header>
+      <img 
+        src="../Images/Invoice/intelnet-logo.png" 
+        alt="company logo"
+        width="80px"
+        >
+      <h2>Intelnet Consulting</h2>
+    </header>
     <h2>Invoice</h2>
     <form action="">
       <h3>Add Invoice Item</h3>
@@ -41,7 +50,10 @@
         />
       </label>
       <label for="save">
-        <input id="save" value="Save" type="submit" />
+        <input 
+          id="save" 
+          value="Save" 
+          type="submit" />
       </label>
     </form>
   </div>

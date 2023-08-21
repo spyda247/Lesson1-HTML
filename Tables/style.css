@@ -4,21 +4,32 @@ html {
   margin: 0;
   padding: 0;
 }
+body {
+  padding: 40px;
+  /* background-color: burlywood;
+  background-image: url('../Images/Invoice/note-taking.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+  background: burlywood url('../Images/Invoice/note-taking.jpg') no-repeat fixed center;
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content:flex-start;
   align-items:flex-start;
 }
-
-
 .wrapper h1 {
   font-size: 0.95em;
 }
 
 table {
   width: inherit;
+  margin: 4px;
   border-collapse: collapse;
   border: 2px solid rgb(200,200,200);
   letter-spacing: 1px;
