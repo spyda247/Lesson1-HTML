@@ -12,19 +12,14 @@ function processInvoice(invoice) {
     const unitPrices = Array.from(invoice.querySelectorAll(".unit-price"));
     const totalElement = invoice.querySelector(".tbl-total");
 
-    for (
-        let qty = 0, unitPrice = 0, price = 0;
-        qty < quantities.length;
-        qty++, unitPrice++, price++
-    ) {
-        prices[price].textContent = caluculateItemPrice(
-            quantities[qty].textContent,
-            unitPrices[unitPrice].textContent
+    for ( let index = 0; index < quantities.length; index++ ) {
+        prices[index].textContent = caluculateItemPrice(
+            quantities[index].textContent,
+            unitPrices[index].textContent
         );
     }
     totalElement.textContent = calculateTotal(prices); 
 }
-
 
 //Utility Helper Functions
 function calculateTotal(prices) {
