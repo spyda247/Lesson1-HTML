@@ -10,7 +10,7 @@ let counter = 0;
 // Add Event Listeners
 submitAddBtn.addEventListener('click', (event) => {
   event.preventDefault()
-  if(item.every((prop => prop.value))) { //Check if user has filled all inputs
+  if (item.every((prop => prop.value))) { //Check if user has filled all inputs
     counter++;
     addInvoiceItem(item);
     invoiceItemCounter.textContent = counter;
@@ -21,9 +21,9 @@ submitAddBtn.addEventListener('click', (event) => {
 });
 submitSaveBtn.addEventListener('click', (event) => {
   event.preventDefault();
-    saveInvoice(invoiceItems);
-    console.log(invoiceItems);
-  });
+  saveInvoice(invoiceItems);
+  console.log(invoiceItems);
+});
 
 /* Utitlity Helper Functions */
 
@@ -32,7 +32,7 @@ function addInvoiceItem(invoiceItem) {
   const item = {}
   invoiceItem.forEach((prop) => {
     item[prop.name] = prop.value;
-    prop.value ='';
+    prop.value = '';
   });
   invoiceItems.push(item);
   let displayText = `
@@ -50,14 +50,26 @@ function displayMessage(text) {
 
 // Saves an Invoice
 function saveInvoice(invoiceItems) {
-  if(invoiceItems.length !== 0) {
-  message.textContent = 'Invoice saved successfuly';
-  setTimeout(() => {
-    invoiceItemCounter.textContent = "0";
-    message.textContent = "No items yet.";
+  if (invoiceItems.length !== 0) {
+    window.localStorage.setItem(generateKey(), JSON.stringify(invoiceItems));
+    message.textContent = 'Invoice saved successfuly';
+    setTimeout(() => {
+      invoiceItemCounter.textContent = "0";
+      message.textContent = "No items yet.";
     }, 3000);
   } else {
     displayMessage("Error: Empty inputs.<br>Fill all inputs to continue");
     invoiceItemCounter.textContent = "0";
   }
+}
+
+function generateKey() {
+  const today = new Date();
+  const key = (
+    ` 
+    ${today.getFullYear()}${today.getMonth()+1}${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}
+    `
+  )
+  console.log(key)
+  return key;
 }
