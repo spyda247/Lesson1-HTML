@@ -8,13 +8,14 @@ const item = Array.from(
 const invoiceItemCounter = document.querySelector("form h3 > span");
 const message = document.querySelector(".message");
 const invoiceItems = [];
+const keys = [];
 let counter = 0;
 
+
 // Add Event Listeners
-submitAddBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  if (item.every((prop) => prop.value)) {
-    //Check if user has filled all inputs
+submitAddBtn.addEventListener('click', (event) => {
+  event.preventDefault()
+  if (item.every((prop => prop.value))) { //Check if user has filled all inputs
     counter++;
     addInvoiceItem(item);
     invoiceItemCounter.textContent = counter;
@@ -26,8 +27,10 @@ submitAddBtn.addEventListener("click", (event) => {
 submitSaveBtn.addEventListener("click", (event) => {
   event.preventDefault();
   saveInvoice(invoiceItems);
-  console.log(invoiceItems);
+  //console.log(invoiceItems);
 });
+
+window.localStorage.setItem('keys', JSON.stringify(keys));
 
 /* Utitlity Helper Functions */
 
@@ -36,7 +39,7 @@ function addInvoiceItem(invoiceItem) {
   const item = {};
   invoiceItem.forEach((prop) => {
     item[prop.name] = prop.value;
-    prop.value = "";
+    prop.value = '';
   });
   invoiceItems.push(item);
   let displayText = `
@@ -54,9 +57,10 @@ function displayMessage(text) {
 
 // Saves an Invoice
 function saveInvoice(invoiceItems) {
+  const key = generateKey();
   if (invoiceItems.length !== 0) {
-    localStorage.setItem("inv_1", JSON.stringify(invoiceItems));
-    message.textContent = "Invoice saved successfuly";
+    window.localStorage.setItem(key, JSON.stringify(invoiceItems));
+    message.textContent = 'Invoice saved successfuly';
     setTimeout(() => {
       invoiceItemCounter.textContent = "0";
       message.textContent = "No items yet.";
@@ -69,11 +73,14 @@ function saveInvoice(invoiceItems) {
 
 function generateKey() {
   const today = new Date();
-  const date = `${today.getFullYear()} ${today.getMonth()} ${today.getDate()}`;
-  const time = `${today.getHours()}${today.getMinutes()}${today.getSeconds()}}`;
-  const dateTime = `${date}` + `${time}`
-  console.log(dateTime);
-
-
+  const key = 
+    `${today.getFullYear()}${today.getMonth()+1}${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}
+    `
   
+  
+  keys.push(key);
+  window.localStorage.setItem('keys', JSON.stringify(keys))
+  console.log(keys)
+  return key;
 }
+
