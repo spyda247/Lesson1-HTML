@@ -2,27 +2,28 @@
 
 /* Each HTML Table Element represents an invoice, which is identified by the class attribute named 'invoice' */
 
-
 //Generate HTML from Local Storage
-const keys = JSON.parse(window.localStorage.getItem('keys'));
+const keys = JSON.parse(window.localStorage.getItem("keys"));
+const message = document.querySelector(".message");
+if (keys === null) {
+  message.textContent = "No new invoices yet, please add an invoice ";
+}
 const htmlContent = generateHTMLContent(keys);
-console.log(htmlContent)
 
 //Append HTML content to DOM Wrapper Element
-const wrapper = document.querySelector('.wrapper');
+const wrapper = document.querySelector(".wrapper");
 appendHTML(htmlContent, wrapper);
 
 //Process HTML Invoice
-const invoices = Array.from(document.querySelectorAll('.invoice'));
-invoices.forEach(invoice => processInvoice(invoice));
-
+const invoices = Array.from(document.querySelectorAll(".invoice"));
+invoices.forEach((invoice) => processInvoice(invoice));
 
 function processInvoice(invoice) {
   const prices = Array.from(invoice.querySelectorAll(".price"));
   const quantities = Array.from(invoice.querySelectorAll(".qty"));
   const unitPrices = Array.from(invoice.querySelectorAll(".unit-price"));
   const totalElement = invoice.querySelector(".tbl-total");
-  
+
   for (let index = 0; index < quantities.length; index++) {
     prices[index].textContent = caluculateItemPrice(
       quantities[index].textContent,
@@ -47,31 +48,30 @@ function caluculateItemPrice(qty, unitPrice) {
 }
 
 function displayData(data) {
-  const wrapper = document.querySelector('.wrapper');
-  wrapper.innerHTML = generateContent(data)
+  const wrapper = document.querySelector(".wrapper");
+  wrapper.innerHTML = generateContent(data);
 }
 
-function generateHTMLContent(arrOfKeys){
-  if(arrOfKeys === null) return '';
-  let htmlContent = ''
-  let obj = {}
-  arrOfKeys.forEach(key => {
+function generateHTMLContent(arrOfKeys) {
+  let htmlContent = "";
+  let obj = {};
+  
+  arrOfKeys.forEach((key) => {
     obj[key] = JSON.parse(window.localStorage.getItem(key));
     htmlContent += generateHTML(obj);
-  })
-  return htmlContent
+  });
+  return htmlContent;
 }
 
 function generateHTML(dataObj) {
-  //console.log(dataObj)
-  let html = '';
-  let tblHeader = '';
-  let tblContent = '';
-  let tblFooter = '';
+  let html = "";
+  let tblHeader = "";
+  let tblContent = "";
+  let tblFooter = "";
   let items = [];
-  
-  for(key in dataObj) {
-   tblHeader = `<table class="invoice">
+
+  for (key in dataObj) {
+    tblHeader = `<table class="invoice">
        <caption>
          Invoice id: <span>${key}</span>
        </caption>
@@ -82,32 +82,31 @@ function generateHTML(dataObj) {
            <th>Unit Price</th>
            <th>Price</th>
          </tr>
-              `
+              `;
   }
-    items = dataObj[key];
-      for(i=0; i < items.length; i++) {
-        item = items[i];
-        tblContent += `<tr>
+  items = dataObj[key];
+  for (i = 0; i < items.length; i++) {
+    item = items[i];
+    tblContent += `<tr>
             <td>${item.name}</td>
             <td>${item.desc}</td>
             <td class="qty">${item.qty}</td>
             <td class="unit-price">${item.price}
             </td>
             <td class="price"></td>
-          </tr>`
-      }
+          </tr>`;
+  }
   tblFooter = `
     <tr>
       <td colspan="4">Total</td>
       <td class="tbl-total"></td>
      </tr> 
-   </table>`
-   
-   html = tblHeader + tblContent + tblFooter;
-   return html;
+   </table>`;
+
+  html = tblHeader + tblContent + tblFooter;
+  return html;
 }
 
 function appendHTML(htmlContent, element) {
-  //console.log(htmlContent)
   element.innerHTML += htmlContent;
 }

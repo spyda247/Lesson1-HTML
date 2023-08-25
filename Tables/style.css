@@ -26,6 +26,12 @@ nav a {
     color: #121212;
 }
 
+.message {
+  font-size: 1.2em;
+  font-weight: 200;
+  font-style: italic;
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -76,3 +82,4 @@ tr:nth-child(odd) td {
 caption {
   padding: 10px;
 }
+
