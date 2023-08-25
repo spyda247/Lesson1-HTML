@@ -5,7 +5,9 @@ const item = Array.from(
 const invoiceItemCounter = document.querySelector('form h3 > span');
 const message = document.querySelector('.message');
 const invoiceItems = [];
+const keys = [];
 let counter = 0;
+
 
 // Add Event Listeners
 submitAddBtn.addEventListener('click', (event) => {
@@ -22,8 +24,10 @@ submitAddBtn.addEventListener('click', (event) => {
 submitSaveBtn.addEventListener('click', (event) => {
   event.preventDefault();
   saveInvoice(invoiceItems);
-  console.log(invoiceItems);
+  //console.log(invoiceItems);
 });
+
+window.localStorage.setItem('keys', JSON.stringify(keys));
 
 /* Utitlity Helper Functions */
 
@@ -50,8 +54,9 @@ function displayMessage(text) {
 
 // Saves an Invoice
 function saveInvoice(invoiceItems) {
+  const key = generateKey();
   if (invoiceItems.length !== 0) {
-    window.localStorage.setItem(generateKey(), JSON.stringify(invoiceItems));
+    window.localStorage.setItem(key, JSON.stringify(invoiceItems));
     message.textContent = 'Invoice saved successfuly';
     setTimeout(() => {
       invoiceItemCounter.textContent = "0";
@@ -65,11 +70,14 @@ function saveInvoice(invoiceItems) {
 
 function generateKey() {
   const today = new Date();
-  const key = (
-    ` 
-    ${today.getFullYear()}${today.getMonth()+1}${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}
+  const key = 
+    `${today.getFullYear()}${today.getMonth()+1}${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}
     `
-  )
-  console.log(key)
+  
+  
+  keys.push(key);
+  window.localStorage.setItem('keys', JSON.stringify(keys))
+  console.log(keys)
   return key;
 }
+
