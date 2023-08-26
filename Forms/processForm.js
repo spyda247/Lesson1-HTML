@@ -1,5 +1,4 @@
 
-const keys = [];
 const submitAddBtn = document.querySelector("#add");
 const submitSaveBtn = document.querySelector("#save");
 const message = document.querySelector(".message");
@@ -7,7 +6,7 @@ const invoiceItemCounter = document.querySelector("form h3 > span");
 const item = Array.from(
   document.querySelectorAll("input:not(input[type=submit])")
 );
-
+let keys = [];
 let invoiceItems = [];
 let counter = 0;
 
@@ -75,6 +74,12 @@ function generateKey() {
     today.getMonth() + 1
   }${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}`;
   keys.push(key);
+
+  if (window.localStorage.getItem("keys") !== null) {
+    let temp = JSON.parse(window.localStorage.getItem("keys"));
+    keys = [...temp, key];
+  }
   window.localStorage.setItem("keys", JSON.stringify(keys));
+   
   return key;
 }

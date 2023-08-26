@@ -52,6 +52,7 @@ function displayData(data) {
 }
 
 function generateHTMLContent(arrOfKeys){
+  if(arrOfKeys === null) return '';
   let htmlContent = ''
   let obj = {}
   arrOfKeys.forEach(key => {
