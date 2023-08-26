@@ -1,21 +1,21 @@
-generateKey();
 
+const keys = [];
 const submitAddBtn = document.querySelector("#add");
 const submitSaveBtn = document.querySelector("#save");
+const message = document.querySelector(".message");
+const invoiceItemCounter = document.querySelector("form h3 > span");
 const item = Array.from(
   document.querySelectorAll("input:not(input[type=submit])")
 );
-const invoiceItemCounter = document.querySelector("form h3 > span");
-const message = document.querySelector(".message");
-const invoiceItems = [];
-const keys = [];
+
+let invoiceItems = [];
 let counter = 0;
 
-
 // Add Event Listeners
-submitAddBtn.addEventListener('click', (event) => {
-  event.preventDefault()
-  if (item.every((prop => prop.value))) { //Check if user has filled all inputs
+submitAddBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (item.every((prop) => prop.value)) {
+    //Check if user has filled all inputs
     counter++;
     addInvoiceItem(item);
     invoiceItemCounter.textContent = counter;
@@ -27,10 +27,9 @@ submitAddBtn.addEventListener('click', (event) => {
 submitSaveBtn.addEventListener("click", (event) => {
   event.preventDefault();
   saveInvoice(invoiceItems);
-  //console.log(invoiceItems);
+  // Reset invoiceItems array
+  invoiceItems = [];
 });
-
-window.localStorage.setItem('keys', JSON.stringify(keys));
 
 /* Utitlity Helper Functions */
 
@@ -39,7 +38,7 @@ function addInvoiceItem(invoiceItem) {
   const item = {};
   invoiceItem.forEach((prop) => {
     item[prop.name] = prop.value;
-    prop.value = '';
+    prop.value = "";
   });
   invoiceItems.push(item);
   let displayText = `
@@ -60,7 +59,7 @@ function saveInvoice(invoiceItems) {
   const key = generateKey();
   if (invoiceItems.length !== 0) {
     window.localStorage.setItem(key, JSON.stringify(invoiceItems));
-    message.textContent = 'Invoice saved successfuly';
+    message.textContent = "Invoice saved successfuly";
     setTimeout(() => {
       invoiceItemCounter.textContent = "0";
       message.textContent = "No items yet.";
@@ -70,17 +69,12 @@ function saveInvoice(invoiceItems) {
     invoiceItemCounter.textContent = "0";
   }
 }
-
 function generateKey() {
   const today = new Date();
-  const key = 
-    `${today.getFullYear()}${today.getMonth()+1}${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}
-    `
-  
-  
+  const key = `${today.getFullYear()}${
+    today.getMonth() + 1
+  }${today.getDate()}${today.getHours()}${today.getMinutes()}${today.getSeconds()}`;
   keys.push(key);
-  window.localStorage.setItem('keys', JSON.stringify(keys))
-  console.log(keys)
+  window.localStorage.setItem("keys", JSON.stringify(keys));
   return key;
 }
-

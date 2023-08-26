@@ -2,13 +2,21 @@
 
 /* Each HTML Table Element represents an invoice, which is identified by the class attribute named 'invoice' */
 
-const keys = JSON.parse(window.localStorage.getItem('keys'));
-console.log(keys)
 
+//Generate HTML from Local Storage
+const keys = JSON.parse(window.localStorage.getItem('keys'));
+const htmlContent = generateHTMLContent(keys);
+console.log(htmlContent)
+
+//Append HTML content to DOM Wrapper Element
+const wrapper = document.querySelector('.wrapper');
+appendHTML(htmlContent, wrapper);
+
+//Process HTML Invoice
 const invoices = Array.from(document.querySelectorAll('.invoice'));
 invoices.forEach(invoice => processInvoice(invoice));
 
-// Business Logic
+
 function processInvoice(invoice) {
   const prices = Array.from(invoice.querySelectorAll(".price"));
   const quantities = Array.from(invoice.querySelectorAll(".qty"));
@@ -43,15 +51,18 @@ function displayData(data) {
   wrapper.innerHTML = generateContent(data)
 }
 
-function loadOfflineData(arrOfKeys){
+function generateHTMLContent(arrOfKeys){
+  let htmlContent = ''
   let obj = {}
-  const data = arrOfKeys.map(key => {
+  arrOfKeys.forEach(key => {
     obj[key] = JSON.parse(window.localStorage.getItem(key));
+    htmlContent += generateHTML(obj);
   })
-  return obj
+  return htmlContent
 }
 
-function generateContent(dataObj) {
+function generateHTML(dataObj) {
+  //console.log(dataObj)
   let html = '';
   let tblHeader = '';
   let tblContent = '';
@@ -72,26 +83,30 @@ function generateContent(dataObj) {
          </tr>
               `
   }
-  items = dataObj[key];
-  for(i=0; i < items.length; i++) {
-    item = items[i];
-    tableContent += `
-       <tr>
-         <td>${item.name}</td>
-         <td>${item.desc}</td>
-         <td class="qty">${item.qty}</td>
-         <td class="unit-price">${item.price}
-         </td>
-         <td class="price"></td>
-       </tr>
-    `
-  }
+    items = dataObj[key];
+      for(i=0; i < items.length; i++) {
+        item = items[i];
+        tblContent += `<tr>
+            <td>${item.name}</td>
+            <td>${item.desc}</td>
+            <td class="qty">${item.qty}</td>
+            <td class="unit-price">${item.price}
+            </td>
+            <td class="price"></td>
+          </tr>`
+      }
   tblFooter = `
     <tr>
       <td colspan="4">Total</td>
-      <td id="tbl-total"></td>
+      <td class="tbl-total"></td>
      </tr> 
    </table>`
    
-   return tblHeader + tblContent + tbl
+   html = tblHeader + tblContent + tblFooter;
+   return html;
+}
+
+function appendHTML(htmlContent, element) {
+  //console.log(htmlContent)
+  element.innerHTML += htmlContent;
 }

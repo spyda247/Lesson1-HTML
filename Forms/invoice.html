@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="invoice.css" />
+    <title>Invoice</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="invoice.css">
-  <title>Invoice</title>
-</head>
+  <body>
+    <nav>
+      <a href="/">Home</a>&nbsp;
+      <a href="../Tables/displayInvoices.html">View Invoices</a>
+    </nav>
 
-<body>
-
-  <div class="wrapper">
-    <header>
-      <img 
-        src="../Images/Invoice/intelnet-logo.png" 
-        alt="company logo"
-        width="80px"
-        >
-      <h2>Intelnet Consulting</h2>
-    </header>
-  
-    <form action="">
-      <h3>Add Invoice Item:<span>0</span></h3>
-      <p class="message">No items yet.</p>
-      
-      <label for="name">
-        Name<br>
-        <input type="text" id="name" name="name" placeholder="Item name" required />
-      </label>
-      <br><br>
-      <label for="desc">
-        Description<br>
-        <input type="text" id="desc" name="desc" placeholder="Item description" required />
-      </label>
-      <br><br>
-      <label for="qty">
-        Quantity<br>
-        <input type="number" id="qty" name="qty" placeholder="Item quantity" required />
-      </label>
-      <br><br>
-      <label for="price">
-        Price<br>
-        <input type="text" id="price" name="price" placeholder="Unit Price" required />
-      </label>
-        <br><br>
-      <label for="add">
-        <input 
-          id="add"
-          value="Add"
-          type="submit"
+    <div class="wrapper">
+      <header>
+        <img
+          src="../Images/Invoice/intelnet-logo.png"
+          alt="company logo"
+          width="80px"
         />
-      </label>
-      <label for="save">
-        <input 
-          id="save" 
-          value="Save" 
-          type="submit" />
-      </label>
-    </form>
-  </div>
-  <script src="processForm.js"></script>
-</body>
+        <h2>Intelnet Consulting</h2>
+      </header>
 
+      <form action="">
+        <h3>Add Invoice Item:<span>0</span></h3>
+        <p class="message">No items yet.</p>
+
+        <label for="name">
+          Name<br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Item name"
+            required
+          />
+        </label>
+        <br /><br />
+        <label for="desc">
+          Description<br />
+          <input
+            type="text"
+            id="desc"
+            name="desc"
+            placeholder="Item description"
+            required
+          />
+        </label>
+        <br /><br />
+        <label for="qty">
+          Quantity<br />
+          <input
+            type="number"
+            id="qty"
+            name="qty"
+            placeholder="Item quantity"
+            required
+          />
+        </label>
+        <br /><br />
+        <label for="price">
+          Price<br />
+          <input
+            type="text"
+            id="price"
+            name="price"
+            placeholder="Unit Price"
+            required
+          />
+        </label>
+        <br /><br />
+        <label for="add">
+          <input id="add" value="Add" type="submit" />
+        </label>
+        <label for="save">
+          <input id="save" value="Save" type="submit" />
+        </label>
+      </form>
+    </div>
+    <script src="processForm.js"></script>
+  </body>
 </html>

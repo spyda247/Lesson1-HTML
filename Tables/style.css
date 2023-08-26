@@ -16,6 +16,16 @@ body {
   background-blend-mode: luminosity;
 }
 
+nav {
+    padding: 10px;
+    background-color: rgba(222, 184, 135, 0.8);
+}
+nav a {
+    margin-right: 20px;
+    font-size: 1.25em;
+    color: #121212;
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -33,8 +43,7 @@ table {
   border-collapse: collapse;
   border: 2px solid rgb(200,200,200);
   letter-spacing: 1px;
-  font-size: 0.7em;
-  
+  font-size: 0.7em; 
 }
 caption {
   font-size: 1.5em;
@@ -43,6 +52,7 @@ caption {
   
 }
 td, th {
+  width: 40px;
   border: 1px solid rgb(190,190,190);
   padding: 10px;
 }

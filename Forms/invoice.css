@@ -1,19 +1,27 @@
 html {
+    font-family: 'Monteserat', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    width: 100%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 40px;
     background: burlywood url('../Images/Invoice/woman-laptop.jpg') no-repeat fixed center;
     background-size: cover;
     background-blend-mode: luminosity;
 }
-
+nav {
+    padding: 10px;
+    background-color: rgba(222, 184, 135, 0.8);
+}
+nav a {
+    margin-right: 20px;
+    font-size: 1.25em;
+    color: #121212;
+}
 .wrapper {
-    height: 95vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,7 +76,7 @@ form .message {
 
 form label,
 form input {
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 @media(max-width: 768px) {
