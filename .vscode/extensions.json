@@ -6,6 +6,11 @@
 		"blackgirlbytes.deploy-to-github-pages",
 		"dbaeumer.vscode-eslint",
 		"tinkertrain.theme-panda",
-		"ms-vsliveshare.vsliveshare"
+		"ms-vsliveshare.vsliveshare",
+		"ritwickdey.liveserver",
+		"formulahendry.auto-close-tag",
+		"dzhavat.bracket-pair-toggler",
+		"xabikos.javascriptsnippets",
+		"esbenp.prettier-vscode"
 	]
 }
