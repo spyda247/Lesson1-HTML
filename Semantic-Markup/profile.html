@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Profile</title>
+		<style>
+			img {
+				border-radius: 100%;
+				width: 70px;
+			}
+			.profile {
+				width: 200px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			search {
+				padding-bottom: 20px;
+			}
+			#perfumes {
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				padding: 4px;
+			}
+			button {
+				outline-color: none;
+				border-radius: 8px;
+				padding: 4px 16px;
+				border: 1px solid #ddd;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: lightblue;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>My Profile</h1>
+			<search>
+				<form action="#">
+					<label for="perfumes"></label>
+					<input type="search" id="perfumes" placeholder="Find perfumes" />
+					<button type="submit">Search</button>
+				</form>
+			</search>
+		</header>
+
+		<div class="profile">
+			<div class="photo">
+				<img src="./Images/model01.jpg" width="100px" />
+			</div>
+			<div class="info">
+				<span><b>Moyin Adegbite</b></span
+				><br />
+				<span><small>moyin@example.com</small></span>
+			</div>
+		</div>
+
+		<content>
+			<dialog open>
+				<p>Greetings, my fans!!</p>
+				<form method="dialog">
+					<button>OK</button>
+				</form>
+			</dialog>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+				consectetur praesentium enim quibusdam quae alias nostrum cum
+				maiorespraesentium enim quibusdam quae alias nostrum cum maiores
+			</p>
+			<section id="about-me">
+				<h2>About Me</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+					alias soluta sint suscipit, rem provident eveniet facere tempora
+					voluptatum explicabo assumenda dolores minus magni dolore rerum
+					consectetur magnam mollitia ducimus!
+				</p>
+			</section>
+			<section id="hobbies">
+				<h2>My Hobbies</h2>
+				<ul>
+					<li>Chess</li>
+					<li>Music</li>
+					<li>Dancing</li>
+				</ul>
+			</section>
+			<section id="favorite-books">
+				<h2>My Favorite Books</h2>
+				<ol>
+					<li>The Bible</li>
+					<li>Deafening Silence</li>
+					<li>Dork Diaries</li>
+				</ol>
+			</section>
+		</content>
+	</body>
+</html>
