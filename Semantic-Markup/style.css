@@ -1,0 +1,53 @@
+body {
+	font-size: 1.3rem;
+}
+search {
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+#perfumes {
+	padding: 4px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+}
+button {
+	outline: none;
+	border-radius: 16px;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	padding: 4px 16px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: lightblue;
+	color: white;
+}
+.profile {
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.photo {
+	padding: 10px;
+}
+img {
+	width: 70px;
+	border-radius: 100%;
+}
+p {
+	padding-right: 40px;
+}
+aside {
+	width: 25%;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	margin-top: -40px;
+	float: right;
+}
+section,
+article {
+	padding: 0 40px;
+	max-width: 80vw;
+}

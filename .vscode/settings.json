@@ -1,4 +1,8 @@
 {
 	"liveServer.settings.port": 5501,
-	"cSpell.words": ["Babajide"]
+	"cSpell.words": ["Babajide"],
+	"editor.wordWrap": "on",
+	"editor.wordWrapColumn": 78,
+	"editor.fontSize": 20,
+	"prettier.bracketSameLine": true
 }
