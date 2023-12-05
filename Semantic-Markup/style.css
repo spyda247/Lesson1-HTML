@@ -31,36 +31,41 @@ button:hover {
 .photo {
 	padding: 10px;
 }
-img {
+.photo img {
 	width: 70px;
 	border-radius: 100%;
 }
 p {
-	padding-right: 40px;
+	padding-right: 60px;
 }
 aside {
-	width: 25%;
-	padding: 20px;
+	max-width: 45%;
+	padding: 4px 20px;
 	border: 1px solid #ddd;
 	border-radius: 12px;
-	margin-top: -40px;
+	margin-top: -20px;
 	float: right;
 }
+
+aside a {
+	font-size: 14px;
+}
+
 section,
 article {
-	padding: 0 40px;
-	max-width: 80vw;
+	padding: 0 20px;
+	max-width: 90vw;
 }
 figure {
+	width: 350px;
 	margin: 0;
-	padding: 0;
+	padding: 10px 0 20px;
+	border-radius: 20px 0;
+	background-color: rgb(209, 42, 30);
+	text-align: center;
 }
 figcaption {
 	padding: 8px 0;
 	font-size: 12px;
 	font-family: sans-serif;
-}
-audio {
-	padding: 8px;
-	background-color: rgb(209, 42, 30);
 }
