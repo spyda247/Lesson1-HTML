@@ -51,3 +51,16 @@ article {
 	padding: 0 40px;
 	max-width: 80vw;
 }
+figure {
+	margin: 0;
+	padding: 0;
+}
+figcaption {
+	padding: 8px 0;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+audio {
+	padding: 8px;
+	background-color: rgb(209, 42, 30);
+}
