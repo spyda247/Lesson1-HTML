@@ -28,15 +28,17 @@ label {
 #perfumes {
 	padding: 4px;
 	margin-right: 10px;
-	border: 1px solid #ddd;
+	border: 1px solid rgba(195, 58, 34, 1);
 	border-radius: 8px;
 }
 button {
 	outline: none;
 	border-radius: 16px;
-	border: 2px solid rgba(0, 0, 0, 0.5);
+	border: 3px solid rgba(195, 58, 34, 1);
 	padding: 4px 16px;
 	cursor: pointer;
+	background: rgba(195, 58, 34, 1);
+	color: #fff;
 }
 button:hover {
 	background-color: lightblue;

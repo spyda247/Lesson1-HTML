@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>HTML-Tables</title>
+	</head>
+	<body>
+		<a href="/">Home</a>
+		<h1>Table Template</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>HTML-Tables</title>
-</head>
+		<!--Table Element-->
 
-<body>
-    <a href="/">Home</a>
-    <h1>Table template</h1>
-
-    <table>
-        <tr>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Qty</th>
-            <th>Unit Price</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>2</td>
-            <td>10.99</td>
-            <td class="price">21.98</td>
-        </tr>
-        <tr>
-            <td>Cell 6</td>
-            <td>Cell 7</td>
-            <td>1</td>
-            <td>20.99</td>
-            <td class="price">20.99</td>
-        </tr>
-        <tr>
-            <td colspan="2">Total</td>
-            <td>3</td>
-            <td>31.98</td>
-            <td id="tbl-total"></td>
-        </tr>
-
-    </table>
-    <script defer src="script.js"></script>
-</body>
-
+		<table>
+			<tr>
+				<th>Item</th>
+				<th>Description</th>
+				<th>Qty</th>
+				<th>Unit Price</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>Mosuf</td>
+				<td>An Arabian woody scent</td>
+				<td>2</td>
+				<td>10.99</td>
+				<td class="price">21.98</td>
+			</tr>
+			<tr>
+				<td>IsyMiyaki</td>
+				<td>A unique cool scent</td>
+				<td>1</td>
+				<td>20.99</td>
+				<td class="price">20.99</td>
+			</tr>
+			<tr>
+				<td>Jack Brown</td>
+				<td>An American sports scent</td>
+				<td>3</td>
+				<td>31.99</td>
+				<td class="price">95.97</td>
+			</tr>
+			<tr>
+				<td colspan="4">Total</td>
+				<td class="grand-total"></td>
+			</tr>
+		</table>
+		<script src="totals.js"></script>
+	</body>
 </html>
